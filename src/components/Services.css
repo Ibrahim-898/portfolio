@@ -1,0 +1,116 @@
+.services { background: var(--bg-primary); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.services-grid.visible { opacity: 1; transform: none; }
+
+.service-card {
+  position: relative;
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: var(--transition);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.services-grid.visible .service-card {
+  opacity: 1;
+  transform: none;
+}
+
+.service-card:hover {
+  border-color: var(--svc-color, var(--accent));
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+}
+
+.svc-bg-glow {
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, var(--svc-color, var(--accent)) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.service-card:hover .svc-bg-glow { opacity: 0.06; }
+
+.svc-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--svc-color, var(--accent)) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--svc-color, var(--accent)) 30%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--svc-color, var(--accent));
+  margin-bottom: 1.25rem;
+  transition: var(--transition);
+}
+
+.service-card:hover .svc-icon-wrap {
+  background: var(--svc-color, var(--accent));
+  color: #fff;
+}
+
+.svc-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.svc-desc {
+  font-size: 0.93rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.svc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.svc-tag {
+  padding: 0.3rem 0.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.svc-arrow {
+  color: var(--svc-color, var(--accent));
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: var(--transition);
+}
+
+.service-card:hover .svc-arrow {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 700px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
