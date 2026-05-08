@@ -14,6 +14,7 @@ app.use(cors({
   ],
   methods: ['GET', 'POST'],
 }))
+app.use(express.json())
 //for checking
 app.get('/', (req, res) => {
   res.send('Portfolio backend running 🚀')
