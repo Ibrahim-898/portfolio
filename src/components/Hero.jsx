@@ -162,7 +162,7 @@ export default function Hero() {
 
               <div className="profile-placeholder">
   <img
-    src="/public/ibrahim's_photo_formal2.JPG"
+    src="/ibrahim's_photo_formal2.JPG"
     alt="Profile"
     className="profile-photo"
   />
