@@ -91,13 +91,7 @@ portfolio/
 └── package.json
 ```
 
-## 🎨 Customization
 
-1. **Profile photo**: Replace the placeholder in `Hero.jsx` and `About.jsx` with `<img src="your-photo.jpg" />`
-2. **Resume**: Add your `resume.pdf` to the `public/` folder
-3. **Content**: Update names, projects, skills, and contact info in each component
-4. **Colors**: Modify CSS variables in `src/styles/globals.css`
-5. **Logo**: Replace the IB monogram with your logo image
 
 ## 🛠 Tech Stack
 
